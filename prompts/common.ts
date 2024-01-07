@@ -18,7 +18,7 @@ assert(apiKey, "failed to get openAI API key");
 
 const openai = new OpenAI({
   apiKey: apiKey,
-  baseURL: 'https://home.nextapi.fun/'
+  baseURL: 'https://api.nextapi.fun'
 });
 
 export async function getCode(
