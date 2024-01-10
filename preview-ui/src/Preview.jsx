@@ -1,7 +1,7 @@
-import { Home, ShoppingCart, Clipboard, MessageSquare, Star } from 'lucide-react';
+import { Home, ShoppingCart, Search, CheckCircle, Award, FileText, User, Bell, Clipboard, MessageSquare } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Carousel, CarouselPrevious, CarouselContent, CarouselItem, CarouselNext } from '@/components/ui/carousel';
-import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuTrigger } from '@/components/ui/navigation-menu';
+import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuTrigger, NavigationMenuIndicator } from '@/components/ui/navigation-menu';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
 import React from 'react';
 
@@ -17,7 +17,10 @@ export default function Prototype() {
 
       {/* Search Box */}
       <div className="p-4 bg-gray-100">
-        <Input placeholder="搜索您想要的..." className="w-full p-2 rounded" />
+        <div className="flex items-center space-x-2">
+          <Search className="w-5 h-5 text-gray-500" />
+          <Input placeholder="搜索您想要的..." className="w-full p-2 rounded" />
+        </div>
       </div>
 
       {/* Carousel Animation */}
@@ -56,28 +59,29 @@ export default function Prototype() {
         <NavigationMenuList className="flex justify-around p-4 bg-white">
           <NavigationMenuItem>
             <NavigationMenuTrigger className="flex flex-col items-center">
-              <Clipboard className="w-6 h-6 text-green-500" />
+              <CheckCircle className="w-6 h-6 text-green-500" />
               <span className="text-xs">新品推荐</span>
             </NavigationMenuTrigger>
           </NavigationMenuItem>
           <NavigationMenuItem>
             <NavigationMenuTrigger className="flex flex-col items-center">
-              <MessageSquare className="w-6 h-6 text-green-500" />
+              <Award className="w-6 h-6 text-green-500" />
               <span className="text-xs">热销排行</span>
             </NavigationMenuTrigger>
           </NavigationMenuItem>
           <NavigationMenuItem>
             <NavigationMenuTrigger className="flex flex-col items-center">
-              <Star className="w-6 h-6 text-green-500" />
+              <FileText className="w-6 h-6 text-green-500" />
               <span className="text-xs">本周特惠</span>
             </NavigationMenuTrigger>
           </NavigationMenuItem>
           <NavigationMenuItem>
             <NavigationMenuTrigger className="flex flex-col items-center">
-              <Clipboard className="w-6 h-6 text-green-500" />
+              <User className="w-6 h-6 text-green-500" />
               <span className="text-xs">会员专享</span>
             </NavigationMenuTrigger>
           </NavigationMenuItem>
+          <NavigationMenuIndicator />
         </NavigationMenuList>
       </NavigationMenu>
 
@@ -133,6 +137,55 @@ export default function Prototype() {
               <p className="text-xl font-bold text-green-500">¥199</p>
             </CardFooter>
           </Card>
+          {/* Additional products */}
+          <Card>
+            <CardHeader>
+              <CardTitle>高级耳机</CardTitle>
+              <CardDescription>音质纯净，佩戴舒适</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <img
+                src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=800&dpr=2&q=80"
+                alt="Headphones"
+                className="object-cover w-full rounded"
+              />
+            </CardContent>
+            <CardFooter>
+              <p className="text-xl font-bold text-green-500">¥680</p>
+            </CardFooter>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle>运动鞋</CardTitle>
+              <CardDescription>舒适透气，运动必备</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <img
+                src="https://images.unsplash.com/photo-1514986888952-8cd320577b68?w=800&dpr=2&q=80"
+                alt="Sneakers"
+                className="object-cover w-full rounded"
+              />
+            </CardContent>
+            <CardFooter>
+              <p className="text-xl font-bold text-green-500">¥560</p>
+            </CardFooter>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle>智能手表</CardTitle>
+              <CardDescription>科技感十足，功能全面</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <img
+                src="https://images.unsplash.com/photo-1539874754764-5a96559165b0?w=800&dpr=2&q=80"
+                alt="Smart Watch"
+                className="object-cover w-full rounded"
+              />
+            </CardContent>
+            <CardFooter>
+              <p className="text-xl font-bold text-green-500">¥960</p>
+            </CardFooter>
+          </Card>
         </div>
       </div>
 
@@ -140,9 +193,10 @@ export default function Prototype() {
       <div className="fixed bottom-0 w-full bg-white">
         <div className="flex justify-around p-4">
           <Home className="w-6 h-6 text-gray-600" />
+          <Bell className="w-6 h-6 text-gray-600" />
           <Clipboard className="w-6 h-6 text-gray-600" />
+          <User className="w-6 h-6 text-gray-600" />
           <MessageSquare className="w-6 h-6 text-gray-600" />
-          <Star className="w-6 h-6 text-gray-600" />
         </div>
       </div>
     </div>
