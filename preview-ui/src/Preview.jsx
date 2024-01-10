@@ -32,7 +32,20 @@ export default function Prototype() {
                 className="object-cover w-full"
               />
             </CarouselItem>
-            {/* Additional CarouselItems can be added here */}
+            <CarouselItem>
+              <img
+                src="https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?w=800&dpr=2&q=80"
+                alt="Featured Product"
+                className="object-cover w-full"
+              />
+            </CarouselItem>
+            <CarouselItem>
+              <img
+                src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=800&dpr=2&q=80"
+                alt="Featured Product"
+                className="object-cover w-full"
+              />
+            </CarouselItem>
           </CarouselContent>
           <CarouselNext className="absolute right-0 z-10 p-2 bg-white rounded-full shadow" />
         </Carousel>
@@ -71,22 +84,56 @@ export default function Prototype() {
       {/* Featured Recommendations */}
       <div className="p-4">
         <h2 className="mb-2 text-lg font-bold">精选推荐</h2>
-        <Card>
-          <CardHeader>
-            <CardTitle>蛋糕草莓甜品</CardTitle>
-            <CardDescription>已售出 536件</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <img
-              src="https://images.unsplash.com/photo-1606851091850-bf92f8a81419?w=800&dpr=2&q=80"
-              alt="Cake"
-              className="object-cover w-full rounded"
-            />
-          </CardContent>
-          <CardFooter>
-            <p className="text-xl font-bold text-green-500">¥136</p>
-          </CardFooter>
-        </Card>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <Card>
+            <CardHeader>
+              <CardTitle>蛋糕草莓甜品</CardTitle>
+              <CardDescription>已售出 536件</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <img
+                src="https://images.unsplash.com/photo-1606851091850-bf92f8a81419?w=800&dpr=2&q=80"
+                alt="Cake"
+                className="object-cover w-full rounded"
+              />
+            </CardContent>
+            <CardFooter>
+              <p className="text-xl font-bold text-green-500">¥136</p>
+            </CardFooter>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle>时尚手提包</CardTitle>
+              <CardDescription>限时折扣</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <img
+                src="https://images.unsplash.com/photo-1555529771-835f59fc5efe?w=800&dpr=2&q=80"
+                alt="Handbag"
+                className="object-cover w-full rounded"
+              />
+            </CardContent>
+            <CardFooter>
+              <p className="text-xl font-bold text-green-500">¥299</p>
+            </CardFooter>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle>智能手环</CardTitle>
+              <CardDescription>健康生活从这里开始</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <img
+                src="https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?w=800&dpr=2&q=80"
+                alt="Smart Band"
+                className="object-cover w-full rounded"
+              />
+            </CardContent>
+            <CardFooter>
+              <p className="text-xl font-bold text-green-500">¥199</p>
+            </CardFooter>
+          </Card>
+        </div>
       </div>
 
       {/* Bottom Navigation Bar */}
