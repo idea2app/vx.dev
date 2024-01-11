@@ -16,9 +16,7 @@ import commitPlugin from "npm:octokit-commit-multiple-files";
 const apiKey = Deno.env.get("OPENAI_API_KEY");
 assert(apiKey, "failed to get openAI API key");
 
-const openai = new OpenAI({
-  apiKey: apiKey,
-});
+const openai = new OpenAI({ apiKey });
 
 export async function getCode(
   messages: ChatCompletionMessageParam[] = [],
@@ -293,7 +291,7 @@ try {
       .join("");
     lucideIcons[newKey] = iconNodes[key];
   }
-} catch {}
+} catch { }
 
 export async function getIssueEvent() {
   const githubEventPath = Deno.env.get("GITHUB_EVENT_PATH");
@@ -376,21 +374,21 @@ export async function composeWorkflow(
     const connectedPrNumber = await getConnectedPr(owner, repo, issue.number);
     pr = connectedPrNumber
       ? (
-          await octokit.rest.pulls.get({
-            owner,
-            repo,
-            pull_number: connectedPrNumber,
-          })
-        ).data
-      : await applyPR(
+        await octokit.rest.pulls.get({
           owner,
           repo,
-          issue.number,
-          branch,
-          placeholderFiles,
-          "[Skip CI] vx.dev: init the PR",
-          [label]
-        );
+          pull_number: connectedPrNumber,
+        })
+      ).data
+      : await applyPR(
+        owner,
+        repo,
+        issue.number,
+        branch,
+        placeholderFiles,
+        "[Skip CI] vx.dev: init the PR",
+        [label]
+      );
   }
 
   let { prompt, images } = await collectPromptAndImages(owner, repo, issue, pr);
